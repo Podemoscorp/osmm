@@ -30,6 +30,8 @@ ALLOWED_HOSTS = [
     "192.168.0.108",
     "localhost",
     "127.0.0.1",
+    "osmm.olimpi.mat.br",
+    "osmm.herokuapp.com",
 ]
 
 
