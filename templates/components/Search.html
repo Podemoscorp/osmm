@@ -1,0 +1,30 @@
+{% load i18n %}
+{% load static %}
+
+{% block Search %}
+<section id="SearchContainer" class='d-flex justify-content-between align-items-center'>
+
+    <div id="Search">
+        <img src="{% static 'images/Lupa.svg' %}" alt="Search" onclick='isOpen()'>
+        <div class='SearchInput isOpen'>
+            <input type="text"/>
+            <img src="{% static 'images/close.svg' %}" alt="X" onclick='isOpen()'>
+        </div>
+    </div>
+
+    <div class="search-button">
+        <button class='bg-color-secundary'>
+            <a href="">
+                Doe
+            </a>
+        </button>
+    </div>
+</section>
+
+<script>
+
+    function isOpen() {
+        document.querySelector(".SearchInput").classList.toggle('isOpen')
+    }
+</script>
+{% endblock %}

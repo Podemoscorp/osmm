@@ -1,0 +1,132 @@
+{% load i18n %}
+{% load static %}
+
+<section class='d-flex' id="mySidenav">
+    <section class='bg-color-primary py-3 pt-4 section-container'>
+        <nav class='myTab'>
+            <img src="{% static 'images/close.svg' %}" class="closebtn" onclick='closeNav()' />
+            <ul class='p-0 position-relative'>
+                <!-- Home -->
+                {% if  request.path == "/" %}
+                    <li>
+                        <div>
+                            <a href="{% url 'index' %}" class='px-3 w-100 d-flex justify-content-center active'>
+                                <div class='d-flex align-items-center flex-column'>
+                                    <img src="{% static '/images/home-primary.svg' %}" alt="Home">
+                                    Home
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <div class='position-absolute sub-menu sr-only'>
+                            <h3>CONTEÚDOS</h3>
+                            <ul class='p-0 d-flex flex-column'>
+                                <a href="#inicio">Início</a>
+                                <a href="#desafios">Desafios</a>
+                            </ul>
+                        </div>
+                    </li>
+                {% else %} 
+                    <li>
+                        <a href="{% url 'index' %}" class='px-3 w-100 d-flex justify-content-center'>
+                            <div class='d-flex align-items-center flex-column'>
+                                    <img src="{% static '/images/home.svg' %}" alt="Home">
+                                Home
+                            </div>
+                        </a>
+                    </li>
+                {% endif %}
+
+                <!--noticias-->
+
+                {% if request.path == "/noticias/" %}
+                <li>
+                    <div>
+                        <a href="{% url 'noticias' %}" class='px-3 w-100 d-flex justify-content-center active'>
+                            <div class='d-flex align-items-center flex-column'>
+                                <img src="{% static '/images/blog-primary.svg' %}" alt='Noticias'>
+                                Noticias
+                            </div>
+                        </a>
+                    </div>
+                    <div class='position-absolute sub-menu sr-only'>
+                        <h3>CONTEÚDOS</h3>
+                        <ul class='p-0 d-flex flex-column'>
+                            <a href="#ultimas">Ultimas</a>
+                            <a href="#todas">Todas</a>
+                        </ul>
+                    </div>
+                </li>
+                {% else %} 
+                    <li>
+                        <a href="{% url 'noticias' %}" class='px-3 w-100 d-flex justify-content-center'>
+                            <div class='d-flex align-items-center flex-column'>
+                                <img src="{% static '/images/blog.svg' %}" alt='Noticias'>
+                                Noticias
+                            </div>
+                        </a>
+                    </li>
+                {% endif %}
+
+                <!--Sobre nós-->
+                {% if  request.path == '/sobre-nos/' %}
+                    <li>
+                        <a href="{% url 'sobre-nos' %}" class='px-3 w-100 d-flex justify-content-center active'>
+                            <div class='d-flex align-items-center flex-column'>
+                                <img src="{% static '/images/OlimpMat-primary.svg' %}" alt="Olimpimat">
+                                Sobre nós
+                            </div>
+                        </a>
+                    </li>
+                {% else %} 
+                    <li>
+                        <a href="{% url 'sobre-nos' %}" class='px-3 w-100 d-flex justify-content-center'>
+                            <div class='d-flex align-items-center flex-column'>
+                                <img src="{% static '/images/OlimpMat.svg' %}" alt="Olimpimat">
+                                Sobre nós
+                            </div>
+                        </a>
+                    </li>
+                {% endif %}
+
+                <!-- Patrocinadores -->
+                {% if  request.path == '/patrocinadore/' %}
+                    <li>
+                        <a href="{% url 'patrocinadores' %}" class='px-3 w-100 d-flex justify-content-center active'>
+                            <div class='d-flex align-items-center flex-column'>
+                                <img src="{% static '/images/' %}" alt="patrocinadores">
+                                Patrocinadores
+                            </div>
+                        </a>
+                    </li>
+                {% else %} 
+                    <li>
+                        <a href="{% url 'patrocinadores' %}" class='px-3 w-100 d-flex justify-content-center'>
+                            <div class='d-flex align-items-center flex-column'>
+                                <img src="{% static '/images/' %}" alt="patrocinadores">
+                                Patrocinadores
+                            </div>
+                        </a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+    </section>
+</section>
+<span onclick="openNav()" class='openNav'>
+    <img src="{% static 'images/NavIcon.svg' %}"></img>
+</span>
+
+{% block script %}
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "20rem"; 
+    }
+
+    /* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
+
+{% endblock %}

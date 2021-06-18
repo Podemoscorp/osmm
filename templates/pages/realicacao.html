@@ -1,0 +1,49 @@
+{% extends 'components/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}Sobre nós (OLIMπMAT/OLIMPIMAT){% endblock %}
+
+{% block menu %}
+{% include 'components/menu.html' %}
+{% include 'components/Search.html' %}
+{% endblock %}
+
+{% block content %}
+
+<section class="container">
+    <div>
+        <h1>Sobre nós</h1>
+        <br>
+        <p class="text-justify">A Olimpíada Podemos de Matemática (OLIMπMAT/OLIMPIMAT) é uma competição que busca explorar ideias intrigantes de Matemática, indo além do que costuma ser apresentado nas salas de aula. Ela propõe desafios semanais ou quinzenais que têm como objetivo estimular a resolução de problemas criativos de Matemática.</p>
+        <br>
+
+        <h2>Contribuidores</h2>
+        <div>
+            {% if contributes %}
+                <div class="row">
+                    {% for contribute in contributes %}
+                        <div class="col-md-4  py-2">
+                            <div class="card">
+                                <img class="card-img-top img-fluid" src="{{contribute.image.url}}" alt="{{contribute.name}}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{contribute.name}}</h5>
+                                    <p class="card-text">{{contribute.description}}</p>
+                                    <a href="{{contribute.more_link}}" class="btn btn-git text-white" style="background-color: #1C1C1C;"><i class="fas fa-globe"></i></a>      
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>Não a Contribuidores no momento</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block footer %}
+    {% include 'components/footer.html' %}
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'components/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}Patrocinadores (OLIMπMAT/OLIMPIMAT){% endblock %}
+
+{% block menu %}
+{% include 'components/menu.html' %}
+{% include 'components/Search.html' %}
+{% endblock %}
+
+{% block content %}
+
+<section class="container">
+    <div>
+        <h1>Patrocinadores</h1>
+        <div>
+            {% if patrocinadores %}
+                <div class="row">
+                    {% for patrocinador in patrocinadores %}
+                        <div class="col-md-4  py-2">
+                            <div class="card">
+                                <img class="card-img-top img-fluid" src="{{patrocinador.image.url}}" alt="{{patrocinador.name}}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{patrocinador.name}}</h5>
+                                    <p class="card-text">{{patrocinador.description}}</p>
+                                    <a href="{{patrocinador.more_link}}" class="btn btn-git text-white" style="background-color: #1C1C1C;"><i class="fas fa-globe"></i></a>      
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>Não a Patrocinadores no momento</p>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block footer %}
+    {% include 'components/footer.html' %}
+{% endblock %}
