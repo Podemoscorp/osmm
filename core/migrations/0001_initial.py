@@ -16,50 +16,165 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Contribute',
+            name="Contribute",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('image', models.ImageField(upload_to='contribute/')),
-                ('more_link', models.URLField()),
-                ('description', models.TextField()),
-                ('created_in', models.DateTimeField(auto_now_add=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                ("image", models.ImageField(upload_to="contribute/")),
+                ("more_link", models.URLField()),
+                ("description", models.TextField()),
+                ("created_in", models.DateTimeField(auto_now_add=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Sponsor',
+            name="Sponsor",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=100)),
-                ('image', models.ImageField(upload_to='sponsor/')),
-                ('more_link', models.URLField()),
-                ('description', models.TextField()),
-                ('created_in', models.DateTimeField(auto_now_add=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=100)),
+                ("image", models.ImageField(upload_to="sponsor/")),
+                ("more_link", models.URLField()),
+                ("description", models.TextField()),
+                ("created_in", models.DateTimeField(auto_now_add=True)),
             ],
         ),
         migrations.CreateModel(
-            name='New',
+            name="New",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(help_text='title of the news', max_length=100, verbose_name='Title')),
-                ('abstract', models.TextField(help_text='news summary', verbose_name='Abstract')),
-                ('processed_abstract', models.TextField(blank=True, default='', help_text='news processed summary', verbose_name='processed Abstract')),
-                ('content', models.TextField(help_text='news content', verbose_name='Content')),
-                ('processed_content', models.TextField(blank=True, default='', help_text='news processed content', verbose_name='Processed Content')),
-                ('image', models.ImageField(blank=True, help_text='news cover image', upload_to='%Y/%m/%d/', verbose_name='Imagem')),
-                ('posted_in', models.DateTimeField(blank=True, default=django.utils.timezone.now, help_text='news posting date', verbose_name='Posted in')),
-                ('views', models.IntegerField(blank=True, default=0)),
-                ('poster', models.ForeignKey(help_text='news editor', on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "title",
+                    models.CharField(
+                        help_text="title of the news",
+                        max_length=100,
+                        verbose_name="Title",
+                    ),
+                ),
+                (
+                    "abstract",
+                    models.TextField(help_text="news summary", verbose_name="Abstract"),
+                ),
+                (
+                    "processed_abstract",
+                    models.TextField(
+                        blank=True,
+                        default="",
+                        help_text="news processed summary",
+                        verbose_name="processed Abstract",
+                    ),
+                ),
+                (
+                    "content",
+                    models.TextField(help_text="news content", verbose_name="Content"),
+                ),
+                (
+                    "processed_content",
+                    models.TextField(
+                        blank=True,
+                        default="",
+                        help_text="news processed content",
+                        verbose_name="Processed Content",
+                    ),
+                ),
+                (
+                    "image",
+                    models.ImageField(
+                        blank=True,
+                        help_text="news cover image",
+                        upload_to="%Y/%m/%d/",
+                        verbose_name="Imagem",
+                    ),
+                ),
+                (
+                    "posted_in",
+                    models.DateTimeField(
+                        blank=True,
+                        default=django.utils.timezone.now,
+                        help_text="news posting date",
+                        verbose_name="Posted in",
+                    ),
+                ),
+                ("views", models.IntegerField(blank=True, default=0)),
+                (
+                    "poster",
+                    models.ForeignKey(
+                        help_text="news editor",
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Image',
+            name="Image",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('image', models.FileField(help_text='Image url and path', upload_to='%Y/%m/%d/', verbose_name='Imagem')),
-                ('name', models.CharField(blank=True, help_text='Image name', max_length=100, verbose_name='Name')),
-                ('upload_in', models.DateTimeField(auto_now_add=True, help_text='image upload date', verbose_name='Upload in')),
-                ('uploader', models.ForeignKey(blank=True, default=1, null=True, on_delete=django.db.models.deletion.SET_NULL, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "image",
+                    models.FileField(
+                        help_text="Image url and path",
+                        upload_to="%Y/%m/%d/",
+                        verbose_name="Imagem",
+                    ),
+                ),
+                (
+                    "name",
+                    models.CharField(
+                        blank=True,
+                        help_text="Image name",
+                        max_length=100,
+                        verbose_name="Name",
+                    ),
+                ),
+                (
+                    "upload_in",
+                    models.DateTimeField(
+                        auto_now_add=True,
+                        help_text="image upload date",
+                        verbose_name="Upload in",
+                    ),
+                ),
+                (
+                    "uploader",
+                    models.ForeignKey(
+                        blank=True,
+                        default=1,
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]
