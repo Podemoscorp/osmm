@@ -1,1 +1,1 @@
-web: gunicorn olimpimat.wsgi
+web: gunicorn osmm.wsgi
