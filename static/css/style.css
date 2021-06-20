@@ -1031,3 +1031,63 @@ a.active:hover {
 }
 
 /*# sourceMappingURL=style.css.map */
+/* OSMM */
+#HomeOsmm {
+  height: 100%;
+  width: 100%;
+}
+
+#HomeOsmm main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#HomeOsmm .descricao {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+#HomeOsmm .descricao button a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--white);
+}
+
+#HomeOsmm .descricao button {
+  background: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 300px;
+  height: 13vh;
+  box-shadow: 0 3px 1px 0 var(--light-gray);
+}
+
+#HomeOsmm .descricao button:first-child {
+  margin-right: 1.5rem;
+}
+
+#HomeOsmm .descricao button strong {
+  text-align: center;
+}
+
+#HomeOsmm aside {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+}
+
+#HomeOsmm main section img{
+  max-height: 500px;
+  max-width: 500px;
+  height: 100%;
+}

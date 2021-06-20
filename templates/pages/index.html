@@ -9,18 +9,36 @@
 
 {% block content %}
 
-<section class="container py-2">
-
+<section id="HomeOsmm" class="container">
+    <main>
+        <section>
+            <!-- <img src="{% static 'images/logo.svg' %}" alt=""> -->
+            <img src="../../static/img/LogoOSMM_bgnone.png" alt="">
+        </section>
+        <section class="descricao">
+            <button>
+                <a href="https://bityli.com/yi1vY">Escola inscreva-se aqui</a>
+            </button>
+            <button>
+                <a href="http://podemos.alunoead.com.br/login/signup.php?">Aluno inscreva-se aqui</a>
+            </button>
+        </section>
+    </main>
+    
+    <aside>
+        <a href="#" class="text-gray">Regulamento</a>
+        <a href="#"class="text-gray">Simulados(disponíveis até dia 10/07)</a>
+    </aside>
 </section>
 
 {% endblock %}
 
 {% block footer %}
-    {% include 'components/footer.html' %}
+{% include 'components/footer.html' %}
 {% endblock %}
 
 {% block script %}
-    <script>
+<script>
 
-    </script>
+</script>
 {% endblock %}

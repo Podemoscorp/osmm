@@ -131,6 +131,8 @@ config/heroku-config.sh
 config/heroku-config.sh
 config/config.sh
 config/keys.json
+config/*
 
 config/Linux-assistente-4b248129efe0.json
 h-config.sh
+config.bat
